@@ -6,10 +6,10 @@
     "license": "MIT",
     "require": {
         "php": "^7.3|^8.0",
-        "blade-ui-kit/blade-heroicons": "^1.2",
-        "blade-ui-kit/blade-icons": "^1.0",
+        "blade-ui-kit/blade-heroicons": "^1.4",
+        "blade-ui-kit/blade-icons": "^1.5",
         "blade-ui-kit/blade-ui-kit": "^0.2.0",
-        "blade-ui-kit/blade-zondicons": "^1.1",
+        "blade-ui-kit/blade-zondicons": "^1.4",
         "cyrildewit/eloquent-viewable": "^6.0",
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
@@ -19,7 +19,9 @@
         "laravel/sanctum": "^2.6",
         "laravel/tinker": "^2.5",
         "livewire/livewire": "^2.0",
-        "mews/purifier": "^3.3"
+        "mews/purifier": "^3.3",
+        "munafio/chatify": "^1.6",
+        "pusher/pusher-php-server": "^7.2"
     },
     "require-dev": {
         "facade/ignition": "^2.5",

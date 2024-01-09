@@ -29,7 +29,7 @@ class User extends Authenticatable implements MustVerifyEmail, PointAble
     use TwoFactorAuthenticatable;
 
     const DEFAULT = 1;
-    const MODERATOR = 2;
+    const COUNSELLOR = 2;
     const ADMIN = 3;
 
     const TABLE = 'users';
@@ -43,10 +43,14 @@ class User extends Authenticatable implements MustVerifyEmail, PointAble
      */
     protected $fillable = [
         'name',
+        'username',
         'email',
         'password',
         'bio',
         'type',
+        'avatar',
+        'messenger_color',
+        'dark_mode',
     ];
 
 
@@ -60,6 +64,7 @@ class User extends Authenticatable implements MustVerifyEmail, PointAble
         'remember_token',
         'two_factor_recovery_codes',
         'two_factor_secret',
+        'active_status',
     ];
 
     /**
@@ -110,9 +115,14 @@ class User extends Authenticatable implements MustVerifyEmail, PointAble
         return (int) $this->type;
     }
 
-    public function isModerator(): bool
+    public function isDefault(): bool
     {
-        return $this->type() === self::MODERATOR;
+        return $this->type() === self::DEFAULT;
+    }
+
+    public function isCounsellor(): bool
+    {
+        return $this->type() === self::COUNSELLOR;
     }
 
     public function isAdmin(): bool

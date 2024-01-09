@@ -23,19 +23,19 @@ class UsersTableSeeder extends Seeder
         ]);
 
         User::factory()->create([
-            'name'      => 'John Doe',
-            'username'  => 'johndoe',
-            'email'     => 'john@example.com',
+            'name'      => 'Chelsey Jia',
+            'username'  => 'chelsey',
+            'email'     => 'chelsey@afriend.com',
             'password'  => bcrypt('password'),
             'type'      => User::DEFAULT,
         ]);
 
         User::factory()->create([
-            'name'      => 'Maya Doe',
-            'username'  => 'mayadoe',
-            'email'     => 'maya@example.com',
-            'password'  => bcrypt('password'),
-            'type'      => User::DEFAULT,
+            'name'      => 'Dr Fara',
+            'username'  => 'fara',
+            'email'     => 'fara@afriend.com',
+            'password'  => bcrypt('counsellor'),
+            'type'      => User::COUNSELLOR,
         ]);
 
         User::factory()->count(10)->create();

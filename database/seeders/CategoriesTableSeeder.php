@@ -17,44 +17,26 @@ class CategoriesTableSeeder extends Seeder
     {
         DB::table('categories')->insert([
             [
-                'name'          => 'General',
-                'slug'          => 'general',
+                'name'          => 'Eunoia',
+                'slug'          => 'eunoia',
                 'created_at'    => Carbon::now(),
                 'updated_at'    => Carbon::now(),
             ],
             [
-                'name'          => 'Feedback',
-                'slug'          => 'feedback',
+                'name'          => 'Irenic',
+                'slug'          => 'irenic',
                 'created_at'    => Carbon::now(),
                 'updated_at'    => Carbon::now(),
             ],
             [
-                'name'          => 'Suggestions',
-                'slug'          => 'suggestions',
+                'name'          => 'Metanoia',
+                'slug'          => 'metanoia',
                 'created_at'    => Carbon::now(),
                 'updated_at'    => Carbon::now(),
             ],
             [
-                'name'          => 'Technical Assistance',
-                'slug'          => 'technical-assistance',
-                'created_at'    => Carbon::now(),
-                'updated_at'    => Carbon::now(),
-            ],
-            [
-                'name'          => 'Off-topic',
-                'slug'          => 'off-topic',
-                'created_at'    => Carbon::now(),
-                'updated_at'    => Carbon::now(),
-            ],
-            [
-                'name'          => 'Events',
-                'slug'          => 'events',
-                'created_at'    => Carbon::now(),
-                'updated_at'    => Carbon::now(),
-            ],
-            [
-                'name'          => 'Announcements',
-                'slug'          => 'announcements',
+                'name'          => 'Utopia',
+                'slug'          => 'utopia',
                 'created_at'    => Carbon::now(),
                 'updated_at'    => Carbon::now(),
             ],

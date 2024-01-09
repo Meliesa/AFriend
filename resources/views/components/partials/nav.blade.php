@@ -6,23 +6,13 @@
 
                 <!-- Logo -->
                 <div class="flex items-center flex-shrink-0">
-                    <a href="{{ route('threads.index') }}">
+                    <a href="{{ route('pages.threads.index') }}">
                         <x-logos.main class="block w-auto h-12" />
                     </a>
                 </div>
 
             </div>
 
-            {{-- Search Topic --}}
-            <div class="flex items-center flex-grow">
-
-                <div class="p-2 text-white bg-blue-200 border rounded-l">
-                    <x-heroicon-o-search class="w-6 h-6" />
-                </div>
-                <input type="search" name="" id="" class="w-full border-none rounded-r shadow-inner bg-blue-50 focus:ring-blue-200" placeholder="Search Topics">
-            </div>
-
-            <div class="hidden sm:flex sm:items-center sm:ml-6">
 
                 <!-- Settings Dropdown -->
                 @auth
@@ -49,12 +39,18 @@
                         <x-slot name="content">
                             <!-- Account Management -->
                             <div class="block px-4 py-2 text-xs text-gray-400">
-                                {{ __('Manage Account') }}
+                                {{ __('More to discover') }}
                             </div>
 
-                            <x-jet-dropdown-link href="{{ route('profile.show') }}">
-                                {{ __('Profile') }}
-                            </x-jet-dropdown-link>
+                            @if(auth()->user()->isAdmin())
+                                <x-jet-dropdown-link href="{{ route('dashboard') }}">
+                                    {{ __('Dashboard') }}
+                                </x-jet-dropdown-link>
+                            @else
+                                <x-jet-dropdown-link href="{{ route('dashboard') }}">
+                                    {{ __('Dashboard') }}
+                                </x-jet-dropdown-link>
+                            @endif
 
                             @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
                             <x-jet-dropdown-link href="{{ route('api-tokens.index') }}">

@@ -21,11 +21,11 @@ class ReplyPolicy
 
     public function update(User $user, Reply $reply): bool
     {
-        return $reply->isAuthoredBy($user) || $user->isModerator() || $user->isAdmin();
+        return $reply->isAuthoredBy($user) || $user->isCounsellor() || $user->isAdmin();
     }
 
     public function delete(User $user, Reply $reply): bool
     {
-        return $reply->isAuthoredBy($user) || $user->isModerator() || $user->isAdmin();
+        return $reply->isAuthoredBy($user) || $user->isCounsellor() || $user->isAdmin();
     }
 }

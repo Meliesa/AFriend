@@ -5,6 +5,8 @@ namespace App\Providers;
 use App\Models\User;
 use App\Models\Reply;
 use App\Models\Thread;
+use App\Models\Journal;
+use App\Policies\JournalPolicy;
 use App\Policies\UserPolicy;
 use App\Policies\ReplyPolicy;
 use App\Policies\ThreadPolicy;
@@ -24,6 +26,7 @@ class AuthServiceProvider extends ServiceProvider
         User::class => UserPolicy::class,
         Reply::class => ReplyPolicy::class,
         Thread::class => ThreadPolicy::class,
+        Journal::class => JournalPolicy::class,
         DatabaseNotification::class => NotificationPolicy::class,
     ];
 

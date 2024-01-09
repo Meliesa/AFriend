@@ -28,9 +28,8 @@ class ThreadController extends Controller
 
     public function index()
     {
-        return view('pages.threads.index', [
-            'threads'       => Thread::orderBy('id', 'desc')->paginate(10),
-        ]);
+        $threads = Thread::paginate(10); // Adjust the pagination limit as needed
+        return view('pages.threads.index', compact('threads'));
     }
 
     public function create()
@@ -45,7 +44,7 @@ class ThreadController extends Controller
     {
         $this->dispatchSync(CreateThread::fromRequest($request));
 
-        return redirect()->route('threads.index')->with('success', 'Thread created!');
+        return redirect()->route('pages.threads.index')->with('success', 'Thread is created!');
     }
 
     public function show(Category $category, Thread $thread)
@@ -81,7 +80,7 @@ class ThreadController extends Controller
 
         $this->dispatchSync(UpdateThread::fromRequest($thread, $request));
 
-        return redirect()->route('threads.index')->with('success', 'Thread Updated!');
+        return redirect()->route('pages.threads.index')->with('success', 'Thread is updated!');
     }
 
     public function subscribe(Request $request, Category $category, Thread $thread)
@@ -90,7 +89,7 @@ class ThreadController extends Controller
 
         $this->dispatchSync(new SubscribeToSubscriptionAble($request->user(), $thread));
 
-        return redirect()->route('threads.show', [$thread->category->slug(), $thread->slug()])
+        return redirect()->route('pages.threads.show', [$thread->category->slug(), $thread->slug()])
             ->with('success', 'You have been subscribed to this thread');
     }
 
@@ -100,7 +99,7 @@ class ThreadController extends Controller
 
         $this->dispatchSync(new UnsubscribeFromSubscriptionAble($request->user(), $thread));
 
-        return redirect()->route('threads.show', [$thread->category->slug(), $thread->slug()])
+        return redirect()->route('peages.threads.show', [$thread->category->slug(), $thread->slug()])
             ->with('success', 'You have been unsubscribed from this thread');
     }
 }

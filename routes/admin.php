@@ -2,10 +2,16 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\TagController;
+use App\Http\Controllers\Admin\CounselorController;
+use App\Http\Controllers\Admin\AdminPodcastController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DashboardController;
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
+   
+    //Manage Podcasts
+    Route::resource('podcasts', AdminPodcastController::class);
+   
     // Dashboard
     Route::get('/', [DashboardController::class, 'index'])->name('index');
 
@@ -13,6 +19,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
      * Url: /admin/categories
      * Route: admin.categories.*
      */
+
     Route::group(['prefix' => 'categories', 'as' => 'categories.'], function () {
         Route::get('/', [CategoryController::class, 'index'])->name('index');
         Route::get('/create', [CategoryController::class, 'create'])->name('create');
@@ -26,6 +33,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
      * Url: /admin/tags
      * Route: admin.tags.*
      */
+
     Route::group(['prefix' => 'tags', 'as' => 'tags.'], function () {
         Route::get('/', [TagController::class, 'index'])->name('index');
         Route::get('/create', [TagController::class, 'create'])->name('create');
@@ -34,4 +42,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         Route::put('/{tag:slug}', [TagController::class, 'update'])->name('update');
         Route::delete('/{tag:slug}', [TagController::class, 'destroy'])->name('delete');
     });
+
+    //Manage Counsellor
+    Route::resource('counsellors', CounselorController::class);
+
 });

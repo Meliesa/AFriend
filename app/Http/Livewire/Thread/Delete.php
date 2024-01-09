@@ -23,7 +23,7 @@ class Delete extends Component
     {
         $this->authorize(ThreadPolicy::DELETE, $this->thread);
         $this->thread->delete();
-        session()->flash('success', 'Thread Deleted!');
+        session()->flash('success', 'Thread is deleted!');
         return redirect()->route('threads.index');
     }
 

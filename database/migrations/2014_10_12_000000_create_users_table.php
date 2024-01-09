@@ -25,6 +25,10 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->foreignId('current_team_id')->nullable();
             $table->string('profile_photo_path', 2048)->nullable();
+            $table->boolean('active_status')->default(0);
+            $table->string('avatar')->default(config('chatify.user_avatar.default'));
+            $table->string('messenger_color')->nullable();
+            $table->boolean('dark_mode')->default(0);
             $table->timestamps();
         });
     }

@@ -6,7 +6,7 @@
 <x-social-meta title="Hello World" description="Blade components are awesome!" image="http://example.com/social.jpg" />
 
 {{-- Title --}}
-<title>{{ config('app.name', 'Forum') }}</title>
+<title>{{ config('app.name', 'A Friend') }}</title>
 
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.gstatic.com">

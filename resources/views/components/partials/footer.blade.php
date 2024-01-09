@@ -1,7 +1,7 @@
-<footer class="p-5 bg-blue-500">
+<footer class="p-5 bg-blue-400">
     <div class="text-white wrapper">
         <span>
-            &copy Copyright 2021
+            &copy A Friend System Copyright 2023
         </span>
     </div>
 </footer>

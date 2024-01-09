@@ -1,7 +1,7 @@
 <div class="flex flex-col items-center min-h-screen pt-6 sm:justify-center sm:pt-0">
 
     <div class="flex items-center justify-center w-full py-4 bg-white sm:max-w-md rounded-t-md">
-        <a href="{{ route('home') }}">
+        <a>
             {{ $logo }}
         </a>
     </div>

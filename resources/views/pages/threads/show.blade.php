@@ -54,7 +54,7 @@
                     <div class="absolute top-0 right-2">
                         <div class="flex space-x-2">
                             @can(App\Policies\ThreadPolicy::UPDATE, $thread)
-                            <x-links.secondary href="{{ route('threads.edit', $thread->slug()) }}">
+                            <x-links.secondary href="{{ route('pages.threads.edit', $thread->slug()) }}">
                                 Edit
                             </x-links.secondary>
                             @endcan
@@ -62,6 +62,11 @@
                             @can(App\Policies\ThreadPolicy::DELETE, $thread)
                             <livewire:thread.delete :thread="$thread" :key="$thread->id()" />
                             @endcan
+
+                            <a href="{{ route('pages.threads.index') }}" class="text-black-400">
+                                <x-zondicon-close class="w-5 h-5" />
+                            </a>
+
                         </div>
                     </div>
                 </div>
@@ -79,7 +84,7 @@
             @auth
             <div class="p-5 space-y-4 bg-white shadow">
                 <h2 class="text-gray-500">Post a reply</h2>
-                <x-form action="{{ route('replies.store') }}">
+                <x-form action="{{ route('pages.replies.store') }}">
                     <div>
                         <input type="text" name="body" class="w-full bg-gray-200 border-none shadow-inner focus:ring-blue-400" />
                         <x-form.error for="body" />

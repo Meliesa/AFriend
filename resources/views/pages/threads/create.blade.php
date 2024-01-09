@@ -11,7 +11,7 @@
 
                     {{-- Create --}}
                     <div class="space-y-6">
-                        <x-form action="{{ route('threads.store') }}">
+                        <x-form action="{{ route('pages.threads.store') }}">
                             <div class="space-y-8">
 
                                 {{-- Title --}}
@@ -47,7 +47,7 @@
                                 {{-- Body --}}
                                 <div>
                                     <x-form.label for="body" value="{{ __('Description') }}" />
-                                    <x-trix name="body" styling="shadow-inner bg-gray-100 h-56" />
+                                    <x-form.input id="body" class="block w-full mt-1" type="text" name="body" :value="old('body')" autofocus />
                                     <x-form.error for="body" />
                                 </div>
 

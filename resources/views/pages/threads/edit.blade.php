@@ -11,7 +11,7 @@
 
                     {{-- Create --}}
                     <div class="space-y-6">
-                        <x-form action="{{ route('threads.update', $thread->slug()) }}">
+                        <x-form action="{{ route('pages.threads.update', $thread->slug()) }}">
                             <div class="space-y-8">
 
                                 {{-- Title --}}
@@ -51,9 +51,7 @@
                                 {{-- Body --}}
                                 <div>
                                     <x-form.label for="body" value="{{ __('Description') }}" />
-                                    <x-trix name="body" styling="shadow-inner bg-gray-100 h-56">
-                                        {{ $thread->body() }}
-                                    </x-trix>
+                                    <x-form.input id="body" class="block w-full mt-1" type="text" name="body" :value="$thread->body()" autofocus />
                                     <x-form.error for="body" />
                                 </div>
 
