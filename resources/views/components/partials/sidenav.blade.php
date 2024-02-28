@@ -11,7 +11,7 @@
     </div>
 
     {{-- Categories --}}
-    <div class="p-4 space-y-4 bg-white shadow ">
+    {{-- <div class="p-4 space-y-4 bg-white shadow ">
         <div class="pb-4 mb-4 border-b border-gray-200">
             <h2 class="uppercase">Categories</h2>
         </div>
@@ -42,7 +42,7 @@
                 </a>
             </li>
         </ul>
-    </div>
+    </div> --}}
 
 
 </aside>

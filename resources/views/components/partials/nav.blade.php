@@ -78,9 +78,9 @@
                         {{ __('Login') }}
                     </x-jet-nav-link>
 
-                    <x-jet-nav-link href="{{ route('register') }}" :active="request()->routeIs('register')">
+                    {{-- <x-jet-nav-link href="{{ route('register') }}" :active="request()->routeIs('register')">
                         {{ __('Register') }}
-                    </x-jet-nav-link>
+                    </x-jet-nav-link> --}}
                 </div>
 
                 @endauth
